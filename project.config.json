@@ -1,23 +1,32 @@
 {
   "files": [
     {
-      "fileId": "1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4",
-      "type": "doc",
-      "name": "library"
-    },
-    {
-      "fileId": "1gDwO-32cgpBDn_0niV0iu6TqQTaRDr4nmSqnT53magY",
+      "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
-      "name": "bookstores"
+      "name": "queen_data"
     }
   ],
   "to_bake": [
     {
-      "template": "bake-book",
-      "data": "library",
-      "array": "books",
+      "template": "bake-member",
+      "data": "queen_data",
+      "array": "members",
       "slug": "slug",
-      "path": "books"
+      "path": "members"
+    },
+    {
+      "template": "bake-album",
+      "data": "queen_data",
+      "array": "albums",
+      "slug": "slug",
+      "path": "albums"
+    },
+    {
+      "template": "bake-tour",
+      "data": "queen_data",
+      "array": "tours",
+      "slug": "tour_slug",
+      "path": "tours"
     }
   ]
 }

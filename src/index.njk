@@ -1,30 +1,39 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Index page title{% endblock %}
+{% block page_title %}Welcome to Queen{% endblock %}
 
-{% block page_description %}The index search description for this page goes here.{% endblock %}
+{% block page_description %}Explore the history and discography of the legendary band Queen!{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Main headline here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  <h2>Library books loop</h2>
-  <p>This loops through data that came from a Google Docs example.</p>
+  <!-- hero header -->
+    <div class="hero-header" style="background-image: url('img/hero-queen.jpg');">
+    <h1 class="display-1 text-white">Welcome to the World of Queen</h1>
+    <p class="lead text-white">Discover the legacy of Queen, their music, band members, and albums.</p>
+  </div>
+  
+  <!-- Band Members Loop -->
+  <h2>Meet the Band</h2>
   <div class="row">
-    {% for book in library.books %}
-      <div class="col">
-        <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
+    {% for member in members %}
+      <div class="col-md-4">
+        <img src="img/band/{{ member.slug }}.jpg" alt="Photo of {{ member.name }}" class="img-fluid">
+        <h3><a href="members/{{ member.slug }}.html">{{ member.name }}</a></h3>
+        <p>{{ member.instrument }}</p>
       </div>
     {% endfor %}
   </div>
-  <h2>Bookstores loop</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
-    <hr>
-  {% endfor %}
+
+  <!-- discography section -->
+  <h2>Discography</h2>
+  <div class="row">
+    {% for album in discography %}
+      <div class="col-md-4">
+        <img src="img/albums/{{ album.slug }}.jpg" alt="{{ album.title }}" class="img-fluid">
+        <h3><a href="albums/{{ album.slug }}.html">{{ album.title }}</a></h3>
+        <p>Released: {{ album.release_date }}</p>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
