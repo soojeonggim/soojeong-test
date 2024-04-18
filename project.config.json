@@ -5,7 +5,14 @@
       "type": "sheet",
       "name": "queen_data"
     }
+    ,
+    {
+      "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
+      "type": "sheet",
+      "name": "discography"
+    }
   ],
+  
   "to_bake": [
     {
       "template": "bake-member",

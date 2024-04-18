@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Queen Discography</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Include Bootstrap for styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Queen</a>
+        <!-- Navbar toggler and other elements -->
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <h1 class="text-center mb-4">Queen Discography</h1>
+      <div class="row">
+        {% for album in albums %}
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="../img/{{ album.image }}" class="card-img-top" alt="{{ album.title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ album.title }}</h5>
+              <p class="card-text">Released in {{ album.year }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <footer>
+      <p class="text-center mt-4">&copy; Your Footer Here</p>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
