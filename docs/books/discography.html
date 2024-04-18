@@ -1,43 +1,65 @@
 <!doctype html>
 <html lang="en">
+  <!-- A Intro to Coding for Journalists class project -->
   <head>
-    <title>Queen Discography</title>
+    <title>Discography</title>
+    <meta name="description" content="The Shipping News by Annie Proulx">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../css/main.css">
-    <!-- Include Bootstrap for styling -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Queen</a>
-        <!-- Navbar toggler and other elements -->
-      </div>
-    </nav>
-
-    <div class="container mt-4">
-      <h1 class="text-center mb-4">Queen Discography</h1>
-      <div class="row">
-        {% for album in albums %}
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="../img/{{ album.image }}" class="card-img-top" alt="{{ album.title }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ album.title }}</h5>
-              <p class="card-text">Released in {{ album.year }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
+    <!-- Navbar starts here -->
+    <body>
+      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Queen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Explore Queen
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="books/band-members.html">Band Members</a></li>
+              <li><a class="dropdown-item" href="books/discography.html">Discography</a></li>
+              <li><a class="dropdown-item" href="books/tours.html">Tours</a></li>
+              <li><a class="dropdown-item" href="books/billboard.html">Billboard Achievements</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
+  <!-- Navbar ends here -->
+    
+  <article class="container">
+    <div class="row">
+      <div class="col-sm-4">
+          <img src="../img/the-shipping-news.jpg" alt="" class="img-fluid mb-4">
+      </div>
+      <div class="col-sm-8">
+          <h1>The Shipping News</h1>
+          <p>The Shipping News is a novel by American author E. Annie Proulx and published by Charles Scribner's Sons in 1993. It won the <a href="https://www.pulitzer.org/winners/e-annie-proulx">Pulitzer Prize</a>, the <a href="https://www.nationalbook.org/books/shipping-news/">U.S. National Book Award</a>, as well as other awards. It was adapted as a film of the same name which was released in 2001.</p>
+      </div>
+    </div>
+  </article>
+
 
     <footer>
-      <p class="text-center mt-4">&copy; Your Footer Here</p>
-    </footer>
+<p id="legal" class="center-block text-center">
+  <small>&copy;</small> <span class="copyright-year"></span>
+  A class project by First Last.
+</p>
+</footer>
 
+
+    <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>
