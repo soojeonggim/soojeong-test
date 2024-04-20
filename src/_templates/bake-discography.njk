@@ -1,0 +1,23 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Queen Discography{% endblock %}
+
+{% block page_description %}Explore the complete discography of Queen, including all major studio albums released over the years.{% endblock %}
+
+{% block content %}
+<article class="container">
+    <h1>Queen Discography</h1>
+    <div class="row">
+        {% for album in albums %}
+            <div class="col-md-4 mb-4">
+                <!-- Album cover image -->
+                <a href="albums/{{ album.slug }}.html">
+                    <img src="img/albums/{{ album.image }}" alt="{{ album.title }} cover" class="img-fluid">
+                </a>
+                <h2>{{ album.title }}</h2>
+                <p>Released: {{ album.year }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</article>
+{% endblock %}

@@ -22,18 +22,11 @@
       "path": "members"
     },
     {
-      "template": "bake-album",
+      "template": "bake-discography",
       "data": "queen_data",
-      "array": "albums",
+      "array": "discography",
       "slug": "slug",
-      "path": "albums"
-    },
-    {
-      "template": "bake-tour",
-      "data": "queen_data",
-      "array": "tours",
-      "slug": "tour_slug",
-      "path": "tours"
+      "path": "discography"
     }
   ]
 }

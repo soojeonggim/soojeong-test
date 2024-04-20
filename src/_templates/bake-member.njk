@@ -1,0 +1,26 @@
+{% extends '_templates/base.njk' %}
+
+{% set relative_path = "../" %}
+
+{% block page_title %}{{ member.name }} - Queen{% endblock %}
+
+{% block page_description %}Learn more about {{ member.name }}, a member of Queen. Discover their role, contributions, and personal history.{% endblock %}
+
+{% block content %}
+<article class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <!-- Using color image for display -->
+            <img src="{{ relative_path }}img/{{ member.image }}" alt="Portrait of {{ member.name }}" class="img-fluid mb-4">
+        </div>
+        <div class="col-md-8">
+            <h1>{{ member.name }}</h1>
+            <p><strong>instruments played:</strong> {{ member.instruments }}</p>
+            <p><strong>tenure:</strong> {{ member.tenure }}</p>
+            <p><strong>birthplace:</strong> {{ member.birthplace }}</p>
+            <p><strong>birthdate:</strong> {{ member.birthdate | date("F d, Y") }}</p>
+            <div>{{ member.description | safe }}</div>
+        </div>
+    </div>
+</article>
+{% endblock %}
