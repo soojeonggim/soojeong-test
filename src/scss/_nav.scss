@@ -1,22 +1,22 @@
 // Navbar styling
 .navbar {
-  background-color: $navbar-background-color; // Set background color using variable
-  margin-bottom: 20px; // Margin to separate from content below
+  background-color: $navbar-background-color;
+  margin-bottom: 20px;
 
   // Styling for nav links
   .nav-link {
-    color: rgba(255, 255, 255, 0.5); // Set default link color with reduced opacity
+    color: rgba(255, 255, 255, 0.5);
     
     // Styles for active state
     &.active {
-      font-weight: bold; // Bold font for active link
-      color: $navbar-link-color; // Use variable for color
+      font-weight: bold; 
+      color: $navbar-link-color;
     }
 
     // Hover effects
     &:hover {
-      text-decoration: underline; // Underline on hover
-      color: lighten($navbar-link-color, 20%); // Lighten the color on hover
+      text-decoration: underline;
+      color: lighten($navbar-link-color, 20%);
     }
   }
 }

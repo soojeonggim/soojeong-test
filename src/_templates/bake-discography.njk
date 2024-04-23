@@ -11,11 +11,11 @@
         {% for album in albums %}
             <div class="col-md-4 mb-4">
                 <!-- Album cover image -->
-                <a href="albums/{{ album.slug }}.html">
-                    <img src="img/albums/{{ album.image }}" alt="{{ album.title }} cover" class="img-fluid">
+                <a href="albums/{{ slug }}.html">
+                    <img src="img/albums/{{ image }}" alt="{{ title }} cover" class="img-fluid">
                 </a>
-                <h2>{{ album.title }}</h2>
-                <p>Released: {{ album.year }}</p>
+                <h2>{{ title }}</h2>
+                <p>Released: {{ year }}</p>
             </div>
         {% endfor %}
     </div>

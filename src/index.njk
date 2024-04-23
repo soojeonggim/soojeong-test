@@ -15,11 +15,11 @@
   <!-- Band Members Loop -->
   <h2>Meet the Band</h2>
   <div class="row">
-    {% for member in members %}
+    {% for member in queen_data.members %}
       <div class="col-md-4">
-        <img src="img/band/{{ member.slug }}.jpg" alt="Photo of {{ member.name }}" class="img-fluid">
-        <h3><a href="members/{{ member.slug }}.html">{{ member.name }}</a></h3>
-        <p>{{ member.instrument }}</p>
+        <img src="img/band/{{ slug }}.jpg" alt="Photo of {{ name }}" class="img-fluid">
+        <h3><a href="members/{{ slug }}.html">{{ member.name }}</a></h3>
+        <p>{{ instrument }}</p>
       </div>
     {% endfor %}
   </div>
@@ -29,9 +29,9 @@
   <div class="row">
     {% for album in discography %}
       <div class="col-md-4">
-        <img src="img/albums/{{ album.slug }}.jpg" alt="{{ album.title }}" class="img-fluid">
-        <h3><a href="albums/{{ album.slug }}.html">{{ album.title }}</a></h3>
-        <p>Released: {{ album.release_date }}</p>
+        <img src="img/albums/{{ slug }}.jpg" alt="{{ title }}" class="img-fluid">
+        <h3><a href="albums/{{ slug }}.html">{{ title }}</a></h3>
+        <p>Released: {{ release_date }}</p>
       </div>
     {% endfor %}
   </div>

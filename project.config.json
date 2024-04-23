@@ -3,11 +3,11 @@
     {
       "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
-      "name": "queen_data"
+      "name": "members"
     }
     ,
     {
-      "fileId": "1f9H6gnamECZBR7BIrAspsV3ppfvVGrsxcSvcWUkoLNk",
+      "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
       "name": "discography"
     }
@@ -20,13 +20,6 @@
       "array": "members",
       "slug": "slug",
       "path": "members"
-    },
-    {
-      "template": "bake-discography",
-      "data": "queen_data",
-      "array": "discography",
-      "slug": "slug",
-      "path": "discography"
     }
   ]
 }
