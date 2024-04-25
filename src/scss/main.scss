@@ -15,21 +15,38 @@ $navbar-link-color: #ffc0cb; // Pink
 // Import partials
 
 @import 'nav';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 h3 {
   font-size: 1.5rem;
 }
 
-// Jumbotron
-.jumbotron {
-  background: url('../img/img-queen/queen-band-wallpaper-thin.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
+.custom-jumbotron {
   text-align: center;
-  padding: 4rem 0;
-  
-  h1.display-4, .lead {
-    font-family: 'Libre Baskerville', serif;
-    color: inherit;
-  }
+  padding-top: 5rem; /* Increase as needed */
+  padding-bottom: 5rem; /* Increase as needed */
+  background-color: #000; /* Black background for better visibility of white text */
+  color: white;
 }
+
+.custom-jumbotron img {
+  margin-bottom: 2rem; /* Space between the image and the headline */
+}
+
+.custom-jumbotron .lead {
+  margin-top: 2rem; /* Space between headline and lead text */
+}
+
+
+
+
+// Base styles
+body, p {
+  font-family: 'Montserrat', sans-serif; // Default body font
+}
+
+// Header styles
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif; // Headers font
+}
+
