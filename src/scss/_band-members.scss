@@ -1,0 +1,38 @@
+///NEWWWWWWWWW
+.band-members {
+  padding: 2rem 0; 
+
+  .section-title {
+    margin-bottom: 2rem; 
+    text-transform: uppercase; 
+    font-weight: bold; 
+  }
+
+  .member {
+    margin-bottom: 2rem; 
+
+    .member-photo {
+      position: relative;
+      margin-bottom: 1rem; 
+
+      h3 {
+        position: absolute;
+        bottom: 10px; 
+        left: 50%;
+        transform: translateX(-50%); 
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        margin: 0; 
+        padding: .5rem 0; 
+      }
+    }
+
+    img {
+      width: 100%; 
+      display: block; 
+      margin-bottom: .5rem;
+    }
+  }
+}
