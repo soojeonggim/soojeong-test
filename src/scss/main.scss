@@ -67,3 +67,34 @@ h3 {
     background-color: darken($navbar-background-color, 10%);
   }
 }
+
+
+// timeline
+.timeline-container {
+  width: 80%;
+  margin: auto;
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-year {
+  font-size: 24px; 
+  font-weight: bold; 
+}
+
+.timeline-content {
+  display: flex;
+}
+
+.timeline-text h2 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.timeline-text p {
+  font-size: 1em;
+}
