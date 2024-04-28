@@ -9,16 +9,22 @@
     <h1>Queen Discography</h1>
     <div class="row">
         {% for album in discography %}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/img-queen/discs/{{ image }}" class="card-img-top img-fluid" alt="{{ title }} Cover">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ title }}</h5>
-                        <p class="card-text">Released: {{ year }}</p>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+  <div class="col-md-4 mb-4">
+    <div class="card">
+      <!-- Use float-start and float-end classes alternatively based on the loop index -->
+      {% if loop.index is odd %}
+        <img src="img/img-queen/discs/{{ image }}" class="card-img-top img-fluid rounded float-start" alt="{{ title }} cover">
+      {% else %}
+        <img src="img/img-queen/discs/{{ image }}" class="card-img-top img-fluid rounded float-end" alt="{{ title }} cover">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        <p class="card-text">Released: {{ year }}</p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
     </div>
 </article>
 {% endblock %}
