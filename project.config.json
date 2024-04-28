@@ -9,9 +9,13 @@
       "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
       "name": "discography"
+    },
+    {
+      "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
+      "type": "sheet",
+      "name": "tour_dates"
     }
   ],
-  
   "to_bake": [
     {
       "template": "bake-member",
@@ -26,6 +30,13 @@
       "array": "discography",
       "slug": "slug",
       "path": "discography"
+    },
+    {
+      "template": "bake-tour",
+      "data": "queen_data",
+      "array": "tour_dates",
+      "slug": "date",
+      "path": "tour"
     }
   ]
 }
