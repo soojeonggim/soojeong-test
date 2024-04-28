@@ -6,6 +6,7 @@ $navbar-link-color: #ffc0cb; // Pink
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Almendra+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap'); // Importing Sedan font
 
 // Navbar styles
 nav.navbar {
@@ -29,14 +30,14 @@ nav.navbar {
   padding: 1rem; // Adjust padding as necessary
 
   h1 {
-    font-family: 'Almendra Display', cursive; // Decorative display font for headings
+    font-family: 'Sedan', serif; // Using Sedan for the header font
     align-self: flex-end;
     padding-right: 2rem;
     color: #fff;
   }
 
   p.lead {
-    font-family: 'Libre Baskerville', serif; // Classic body font
+    font-family: 'Sedan', serif; // Using Sedan for the lead paragraph
     align-self: flex-end;
     padding-bottom: 1rem;
     color: #fff;
