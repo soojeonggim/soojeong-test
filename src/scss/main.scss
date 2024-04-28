@@ -1,35 +1,68 @@
-
-$navbar-background-color: #000; // Black 
+// Variable definitions
+$navbar-background-color: #000; // Black
 $navbar-link-color: #ffc0cb; // Pink
 
+// Bootstrap and fonts import
 @import '../../node_modules/bootstrap/scss/bootstrap';
-@import 'nav';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Navbar styles
+nav.navbar {
+  margin-bottom: 0; // Remove space between navbar and hero header
+  background-color: $navbar-background-color;
+  .navbar-nav .nav-link {
+    color: $navbar-link-color;
+    font-family: 'Libre Baskerville', serif; // Fancy serif font for links
+  }
+}
+
+// Hero header styles
+.hero-header {
+  background-image: url('img/img-queen/queen-band-wallpaper-thin.jpg');
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem; // Adjust padding as necessary
+
+  h1 {
+    font-family: 'Almendra Display', cursive; // Decorative display font for headings
+    align-self: flex-end;
+    padding-right: 2rem;
+    color: #fff;
+  }
+
+  p.lead {
+    font-family: 'Libre Baskerville', serif; // Classic body font
+    align-self: flex-end;
+    padding-bottom: 1rem;
+    color: #fff;
+  }
+}
+
+// Typographic styles
+body, p {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Almendra Display', cursive;
+}
 
 h3 {
   font-size: 1.5rem;
 }
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
-
-// Base styles
-body, p {
-  font-family: 'Montserrat', sans-serif; // Default body font
-}
-
-// Header styles
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif; // Headers font
-}
-
+// Button styles
 .read-more-btn {
-  background-color: #000; // Black background
-  color: #fff; // White text
-  border: none; // No border
+  background-color: $navbar-background-color;
+  color: #fff;
+  border: none;
   
   &:hover {
-    background-color: #333; // Slightly lighter black on hover for feedback
-    color: #fff; // Text remains white
+    background-color: darken($navbar-background-color, 10%);
   }
 }

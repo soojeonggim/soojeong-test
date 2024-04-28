@@ -11,7 +11,6 @@
         {% for album in discography %}
   <div class="col-md-4 mb-4">
     <div class="card">
-      <!-- Use float-start and float-end classes alternatively based on the loop index -->
       {% if loop.index is odd %}
         <img src="img/img-queen/discs/{{ image }}" class="card-img-top img-fluid rounded float-start" alt="{{ title }} cover">
       {% else %}
@@ -24,7 +23,6 @@
     </div>
   </div>
 {% endfor %}
-
     </div>
 </article>
 {% endblock %}
