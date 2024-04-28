@@ -4,8 +4,7 @@
       "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
       "name": "members"
-    }
-    ,
+    },
     {
       "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
@@ -20,6 +19,13 @@
       "array": "members",
       "slug": "slug",
       "path": "members"
+    },
+    {
+      "template": "bake-discography",
+      "data": "queen_data",
+      "array": "discography",
+      "slug": "slug",
+      "path": "discography"
     }
   ]
 }

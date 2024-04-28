@@ -8,14 +8,15 @@
 <article class="container">
     <h1>Queen Discography</h1>
     <div class="row">
-        {% for album in albums %}
+        {% for album in discography %}
             <div class="col-md-4 mb-4">
-                <!-- Album cover image -->
-                <a href="albums/{{ slug }}.html">
-                    <img src="img/albums/{{ image }}" alt="{{ title }} cover" class="img-fluid">
-                </a>
-                <h2>{{ title }}</h2>
-                <p>Released: {{ year }}</p>
+                <div class="card">
+                    <img src="img/img-queen/discs/{{ image }}" class="card-img-top img-fluid" alt="{{ title }} Cover">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ title }}</h5>
+                        <p class="card-text">Released: {{ year }}</p>
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
