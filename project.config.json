@@ -13,7 +13,12 @@
     {
       "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
       "type": "sheet",
-      "name": "tour_dates"
+      "name": "tour"
+    },
+    {
+      "fileId": "1IQLF4qgKEV97mWD8gHmkVJQZhDmygxhj9kTGTuh5a2g",
+      "type": "sheet",
+      "name": "billboard"
     }
   ],
   "to_bake": [
@@ -37,6 +42,13 @@
       "array": "tour",
       "slug": "date",
       "path": "tour"
+    },
+    {
+      "template": "bake-billboard",
+      "data": "queen_data",
+      "array": "billboard",
+      "slug": "song",
+      "path": "billboard"
     }
   ]
 }
