@@ -34,7 +34,7 @@
     {
       "template": "bake-tour",
       "data": "queen_data",
-      "array": "tour_dates",
+      "array": "tour",
       "slug": "date",
       "path": "tour"
     }

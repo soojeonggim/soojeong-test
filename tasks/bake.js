@@ -7,52 +7,34 @@ import isValidGlob from 'is-valid-glob';
 import nunjucksRender from 'gulp-nunjucks-render';
 import rename from 'gulp-rename';
 
-// eslint-disable-next-line no-sync
 const config = fs.readJsonSync('./project.config.json');
 
 function bake(resolve) {
   const dataDir = 'src/_data/';
 
-  // modularize manageEnv from nunjucks.js
   function manageEnv(env) {
-    // loop over config vars to add to nunjucks global env
-    // which can be added to project.config.json
     for (const k in config) {
-      // eslint-disable-next-line no-prototype-builtins
       if (config.hasOwnProperty(k)) {
         env.addGlobal(k, config[k]);
       }
     }
 
-    // loop over the directory of files
     fs.readdir(dataDir, (err, files) => {
-      // handle errors
       if (err) {
         console.error('Could not list the directory.', err);
-        // eslint-disable-next-line no-process-exit, no-undef
         process.exit(1);
       }
 
-      // for each file
       files.forEach((file) => {
-        // if it's a .json file
         if (file.endsWith('json')) {
-          // make the key the file name
           const key = file.split('.json')[0];
-
-          // and the value the file contents
-          // eslint-disable-next-line no-sync
           const fileContents = fs.readFileSync(dataDir + file);
           const value = JSON.parse(fileContents);
-
-          // and add to our global environment
           env.addGlobal(key, value);
         }
       });
     });
 
-    // set up journalize
-    // eslint-disable-next-line guard-for-in
     for (const key in journalize) {
       const func = journalize[key];
       if (typeof func === 'function') {
@@ -67,22 +49,10 @@ function bake(resolve) {
   }
 
   config.to_bake.forEach((bake) => {
-    if (!bake.template) {
-      throw new Error('bake.template is undefined. Add a nunjucks template.');
-    }
-    if (!bake.slug) {
-      throw new Error(
-        'bake.slug is undefined. Specify a key that will be used as the slug for the page.'
-      );
-    }
-    if (bake.path === null) {
-      throw new Error(
-        'bake.path is undefined. Specify a path where your pages will be baked.'
-      );
+    if (!bake.template || !bake.slug || bake.path === null) {
+      throw new Error('Configuration error: Missing required bake configuration.');
     }
 
-    // and the value the file contents
-    // eslint-disable-next-line no-sync
     const fileContents = fs.readFileSync(`${dataDir}${bake.data}.json`);
     let data = JSON.parse(fileContents);
 
@@ -90,45 +60,40 @@ function bake(resolve) {
       data = data[bake.array];
     }
     if (!data) {
-      throw new Error(
-        `data[${bake.array}] is undefined. Specify the valid array.`
-      );
+      throw new Error(`Data array '${bake.array}' is undefined.`);
     }
 
     data.forEach((d) => {
-      if (!d[bake.slug]) {
-        throw new Error(
-          `d[${bake.slug}] is undefined. Specify a key that will be used as the slug for the page.`
-        );
+      if (!d.title) {
+        console.error('Missing title for generating slug:', d);
+        return; // Skip this item or handle it appropriately
+      }
+      d.slug = generateSlug(d.title); // Generate slug from title
+
+      if (!isValidGlob(`docs/${bake.path}/${d.slug}.html`)) {
+        throw new Error(`Invalid glob pattern for: docs/${bake.path}/${d.slug}.html`);
       }
 
-      if (!isValidGlob(`docs/${bake.path}/${d[bake.slug]}.html`)) {
-        throw new Error(
-          `docs/${bake.path}/${d[bake.slug]}.html is not a valid glob.`
-        );
-      }
-
-      gulp
-        .src(`src/_templates/${bake.template}.njk`)
-        .pipe(gulpData(d))
-        .pipe(
-          nunjucksRender({
-            path: 'src',
-            manageEnv
-          })
-        )
-        .pipe(
-          rename({
-            basename: d[bake.slug],
-            extname: '.html'
-          })
-        )
+      gulp.src(`src/_templates/${bake.template}.njk`)
+        .pipe(gulpData(() => d))
+        .pipe(nunjucksRender({
+          path: ['src/_templates'],
+          manageEnv: manageEnv
+        }))
+        .pipe(rename({
+          basename: d.slug,
+          extname: '.html'
+        }))
         .pipe(gulp.dest(`docs/${bake.path}`))
         .pipe(browserSync.stream());
     });
   });
 
   resolve();
+}
+
+function generateSlug(title) {
+  return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 }
 
 gulp.task('bake', bake);
