@@ -24,3 +24,15 @@
   color: #212529;
   background-color: rgba(0,0,0,.075);
 }
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.centered-table {
+  width: auto; 
+  margin-top: -50px; 
+}
